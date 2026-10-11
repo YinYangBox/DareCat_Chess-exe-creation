@@ -1,0 +1,44 @@
+{
+  "name": "darecat-chess",
+  "version": "1.0.0",
+  "description": "DareCat Chess desktop game",
+  "main": "main.js",
+  "author": "YinYangBox",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.yinyangbox.darecat-chess",
+    "productName": "DareCat Chess",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "script.js",
+      "game.html",
+      "package.json"
+    ],
+    "win": {
+      "icon": "assets/darecat.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
